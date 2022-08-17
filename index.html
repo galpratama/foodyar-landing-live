@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Foodyar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script src="assets/script/tailwind-config.js"></script>
+
+    <!-- Stylesheet -->
+    <style type="text/tailwindcss">
+      .flex::before,
+      .flex::after {
+        display: none !important;
+      }
+
+      .wrapper {
+        @apply max-w-[1440px] px-4 lg:px-[50px] xl:px-[100px] mx-auto font-quicksand;
+      }
+
+      .nav-link {
+        @apply text-grey font-normal text-lg relative;
+      }
+
+      .nav-link.active {
+        @apply text-dark font-semibold max-w-max;
+      }
+
+      .nav-link.active span,
+      .text__underline {
+        @apply h-1 absolute w-full z-[-10] rounded-[100px] bg-pink left-0 bottom-[6px];
+      }
+
+      .btn {
+        @apply rounded-t-[30px] rounded-[15px] py-[14px] px-[30px] font-semibold text-lg text-dark text-center capitalize;
+      }
+
+      .btn-pink {
+        @apply bg-pink;
+      }
+
+      .btn-yellow {
+        @apply bg-yellow;
+      }
+
+      section {
+        @apply pt-[100px];
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="wrapper pt-5 lg:pt-[50px]">
+      <div
+        class="flex flex-col item-stretch lg:flex-row lg:items-center lg:justify-between"
+      >
+        <!-- Logo & Toggler Button -->
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div>
+            <img src="/assets/svgs/logo.svg" alt="Foodyar" />
+          </div>
+          <!-- Responsive Navbar Button -->
+          <div>
+            <button
+              class="block p-1 outline-none lg:hidden mobile-menu-button"
+              data-target="#navigation"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-7 h-7 text-dark-1 dark:text-light-1"
+                x-show="!showMenu"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="mobile-menu lg:block mt-5 lg:mt-0" id="navigation">
+          <div
+            class="flex flex-col w-full font-normal lg:flex-row text-dark lg:w-max lg:gap-x-[35px] gap-y-4 lg:items-center"
+          >
+            <a href="#" class="nav-link active">Home <span></span></a>
+            <a href="#" class="nav-link">Beverages <span></span></a>
+            <a href="#" class="nav-link">Chef <span></span></a>
+            <a href="#" class="nav-link">Ingredient <span></span></a>
+            <a href="#" class="nav-link">Stories <span></span></a>
+            <a href="#" class="btn btn-pink lg:ml-[-15px] mt-[15px] lg:mt-0">
+              My Kitchen
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="wrapper">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="text-[46px] text-dark font-bold leading-[70px]">
+            <span class="relative overflow-hidden">
+              Eat <span class="text__underline !h-2 !w-[90%]"></span>
+            </span>
+            What You Cook
+            <br class="hidden md:block" />
+            With Us,
+            <span class="relative">
+              Together! <span class="text__underline !h-2"></span>
+            </span>
+          </div>
+          <div class="mt-[10] mb-10 text-xl text-grey leading-[34px]">
+            When you eat something that cooked by yourself,
+            <br class="hidden md:block" />
+            the happiness ispriceless.
+          </div>
+          <a href="#" class="btn btn-yellow">Decide A Menu</a>
+        </div>
+        <div class="relative">
+            <div class="absolute z-10 bottom-[50%] right-[50%] translate-x-1/2 translate-y-1/2">
+                <img src="/assets/svgs/ic-play.svg" alt="Play Button">
+            </div>
+            <img src="/assets/images/hero-image.png" alt="Foodyar">
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Menu -->
+
+    <!-- Testimonial -->
+    <section class="wrapper !pt-[170px]">
+        <div class="flex justify-center flex-col gap-5 items-center">
+            <div class="text-center md:max-w-[736px] text-2xl md:text-[36px] text-dark leading-snug md:leading-[50px] relative">
+                <img src="assets/svgs/quote1.svg" alt="" class="absolute left-[-130px] top-[-70px] z-[-10]">
+                Awalnya saya malu dengan mertua karena tidak bisa memasak, kini mereka lebih suka makan malam di rumah demi menyantap
+                masakan yang saya buat sendiri
+            </div>
+        </div>
+        <div class="flex gap-5 justify-center items-center mt-6">
+            <div class="relative">
+                <img src="assets/images/avatar.png" alt="" class="w-20 relative z-10 object-cover rounded-full">
+                <span class="w-20 bg-purple absolute z-0 h-20 rounded-full bottom-[-3px] right-[-6px]"></span>
+                <span class="w-20 bg-cream absolute z-0 h-20 rounded-full top-[-3px] left-[-6px]"></span>
+            </div>
+            <div>
+                <div class="text-dark text-[22px] font-semibold">Camella Sarrah</div>
+                <p class="mt-[6px] text-base text-grey">Vege Master</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="wrapper">
+        <div class="flex flex-wrap justify-center items-center max-w-[857px] mx-auto gap-10 md:gap[70px] lg:gap-[100px]">
+            <div class="flex flex-col items-center gap-2">
+                <div class="text-dark text-[32px] font-bold">180.000+</div>
+                <p class="uppercase text-xl text-grey">MENU FOOD</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="text-dark text-[32px] font-bold">20.000+</div>
+                <p class="uppercase text-xl text-grey">CHEFS</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="text-dark text-[32px] font-bold">400.000+</div>
+                <p class="uppercase text-xl text-grey">COURSE</p>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <div class="text-dark text-[32px] font-bold">6.900.000</div>
+                <p class="uppercase text-xl text-grey">ALUMNI</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download App -->
+    <section class="wrapper pb-[150px]">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+            <div class="relative max-w-[428px] mx-auto">
+                <img src="/assets/images/illustration-image.png" alt="Foodyar">
+            </div>
+            <div>
+                <div class="text-[46px] text-dark font-bold leading-[70px]">
+                    <span class="relative overflow-hidden">
+                        Download <span class="text__underline !h-2 !w-[90%]"></span>
+                    </span>
+                    our app
+                    <br class="hidden md:block" />
+                    and join
+                    <span class="relative">
+                        the contest <span class="text__underline !h-2"></span>
+                    </span>
+                </div>
+                <div class="mt-[10] mb-10 text-xl text-grey leading-[34px]">
+                    In order to improve our cooking skills,
+                    <br class="hidden md:block" />
+                    we do need a food photography
+                </div>
+                <div class="mt-[50px] flex items-center gap-5">
+                    <a href="#">
+                        <img src="assets/svgs/app-store.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="assets/svgs/play-store.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <!-- Footermark -->
+    <div class="wrapper py-[30px]">
+        <p class="text-grey text-center">
+            All Rights Reserved Foodyar by Pixel from BuildWith Angga 2020
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+  </body>
+</html>
